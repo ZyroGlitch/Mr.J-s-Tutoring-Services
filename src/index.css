@@ -1,8 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+@keyframes slideRight {
+  0% {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(20px);
+    opacity: 0;
+  }
+}
+
+@keyframes scrollRight {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100vw);
+  }
+}
+
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(100vw);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-scroll-right {
+  animation: scrollRight 12s linear infinite;
+}
+
+.animate-scroll-left {
+  animation: scrollLeft 12s linear infinite;
+}
+
+.scroll-speed-slow {
+  animation-duration: 16s !important;
+}
+
+.scroll-speed-medium {
+  animation-duration: 12s !important;
+}
+
+.scroll-speed-fast {
+  animation-duration: 8s !important;
+}
+
+.review-card-container:hover {
+  animation-play-state: paused !important;
+}
+
+.animate-slide-right {
+  animation: slideRight 2s ease-in-out infinite;
+}
 
 body{
   margin: 0;
@@ -65,6 +125,10 @@ body{
 
 body {
   margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 #root {
